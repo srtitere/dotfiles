@@ -1,0 +1,2 @@
+compton & disown
+feh --randomize --bg-fill ~/wallpapers/* & disown
