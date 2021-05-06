@@ -1,8 +1,6 @@
-
 clang
 micro
 gcc
-phyton-pip
 rofi
 ranger
 brightnessctl
@@ -13,3 +11,5 @@ pavucontrol
 make
 python3
 python3-pip
+kitty
+compton

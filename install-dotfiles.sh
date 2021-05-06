@@ -42,3 +42,11 @@ then
 else
 	cp -r ./config/kitty  $HOME/.config/
 fi
+
+if [[ -f $HOME/.config/compton.conf ]]
+then
+	cp -rf $HOME/.config/compton.conf $HOME/.config/compton.conf.bak
+	cp -r ./compton/compton.conf $HOME/.config/
+else
+	cp -r ./compton/compton.conf $HOME/.config/ 
+fi
