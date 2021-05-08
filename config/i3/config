@@ -28,13 +28,13 @@ font pango:Arial Black 9
 
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-#new_window normal
+new_window pixel 5
 #new_float normal
 
 
-for_window [class=".*"] border pixel 1
-default_border pixel 1
-default_floating_border pixel1
+for_window [class=".*"] border pixel 2
+default_border pixel 2
+default_floating_border pixel 2
 title_align center
 
 # Hide borders
@@ -43,7 +43,7 @@ title_align center
 # change borders
 bindsym $mod+u border none
 #bindsym $mod+y border pixel 1
-bindsym $mod+n border pixel 1
+bindsym $mod+n border pixel 2
 
 
 
