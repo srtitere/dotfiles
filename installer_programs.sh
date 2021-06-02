@@ -1,4 +1,9 @@
 #! /usr/bin/bash
 
-cat list_programs | xargs sudo apt install -y
-sudo pip3 install autotiling
+while read line; do
+# Reading each line
+  sudo apt install -y $line
+done < ./list_programs
+
+# cat list_programs | xargs sudo apt install -y
+pip3 install autotiling
