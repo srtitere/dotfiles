@@ -50,3 +50,19 @@ then
 else
 	cp -r ./compton/compton.conf $HOME/.config/ 
 fi
+
+if [[ -f $HOME/.Xresources ]]
+then
+    cp -rf $HOME/.Xresources $HOME/.Xresources$(date +"%Y-%m-%d-%H-%M%S").bak
+    cp -r .Xresources $HOME/.Xresources
+else
+    cp -r .Xresources $HOME/.Xresources
+fi
+
+if [[ -f $HOME/.profile ]]
+then
+    cp -rf $HOME/.profile $HOME/.profile$(date +"%Y-%m-%d-%H-%M%S").bak
+    cp -r .profile $HOME/.profile
+else
+    cp -r .profile $HOME/.profile
+fi
