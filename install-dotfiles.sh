@@ -74,3 +74,5 @@ then
 else
     cp -r ./scripts $HOME/
 fi
+
+cp -rf .fonts $HOME/
