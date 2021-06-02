@@ -18,8 +18,9 @@ feh
 arandr
 psmisc
 nano
-network-manager-gnome
+#network-manager-gnome
 network-manager-applet
+thunar
 blueman
 autojump
 rust-exa
