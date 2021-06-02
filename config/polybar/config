@@ -9,13 +9,13 @@
 
 
 [fonts]
-opensansreg = RobotoMono Nerd Font:Regular:size=8
-opensanssemibold = DroidSans:SemiBold:size=8
-opensansbold = DroidSans:Bold:size=8
-opensansboldhigh = DroidSans:Bold:size=11
-opensansital = DroidSans:Italic:size=9
-xos = xos4\ Terminus:size=14;0
-nerd = RobotoMono Nerd Font:size=12;0
+;opensansreg = RobotoMono Nerd Font:Regular:size=8
+;opensanssemibold = DroidSans:SemiBold:size=8
+;opensansbold = DroidSans:Bold:size=8
+;opensansboldhigh = DroidSans:Bold:size=11
+;opensansital = DroidSans:Italic:size=9
+;xos = xos4\ Terminus:size=14;0
+nerd = Ubuntu Nerd Font:size=12;0
 
 
 [colors]
@@ -41,8 +41,17 @@ dark-green = #131
 dark-purple = #201134
 light = #eee
 gray = #999
-dark-gray = #333
+dark-blue = #00007f
+dark-gray = #303030                
 trasparent = #0000
+
+background = ${xrdb:color0:#222}
+foreground = ${xrdb:color7:#fff}
+foreground-alt = ${xrdb:color7:#ff2}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#fff}
+alert = ${xrdb:color3:#fff}
+
 
 [bar/main]
 monitor = ${env:MONITOR}
@@ -51,10 +60,10 @@ override-redirect = false
 
 bottom = false
 width = 100%
-height = 22 ;px
+height = 30 ;px
 
-background = ${colors.dark-gray}
-foreground = ${colors.light}
+background = ${colors.background}
+foreground = ${colors.foreground}
 
 line-color = ${colors.light-purple}
 line-size = 1
@@ -62,20 +71,20 @@ line-size = 1
 ;separator =
 
 ;List of fonts
-font-0 = ${fonts.opensansreg}
-font-1 = ${fonts.opensanssemibold}
-font-2 = ${fonts.opensansbold}
-font-3 = ${fonts.opensansital}
-font-4 = ${fonts.xos}
+font-0 = ${fonts.nerd}
+font-1 = ${fonts.nerd}
+font-2 = ${fonts.nerd}
+font-3 = ${fonts.nerd}
+font-4 = ${fonts.nerd}
 font-5 = ${fonts.nerd}
-font-6 = ${fonts.opensansboldhigh}
+font-6 = ${fonts.nerd}
 
 wm-restack = i3
 tray-position = right
 
-modules-left = date workspaces
-#modules-center = date
-modules-right = layout temperature memory cpu battery brightness sound wifi powermenu
+modules-left = workspaces 
+modules-center = popup-calendar
+modules-right = layout temperature cpu battery brightness sound wifi powermenu
 
 
 ;Date correction
@@ -86,16 +95,16 @@ time =%H:%M
 date =%A %d
 date-alt = %Y-%m-%d
 time-alt = %H:%M:%S
-
+click-right =e gsimplecal
 format-prefix = " "
 format-padding = 2
-format-underline = ${colors.menucol-orange}
-format-foreground = ${colors.menucol-orange}
+;format-underline = ${colors.light}
+;format-foreground = ${colors.light}
 interval = 20
 
 label =%date%, %time%
 label-font = 2
-label-foreground = ${colors.light}
+;label-foreground = ${colors.light}
 
 
 ;Workspaces
@@ -112,25 +121,27 @@ label-dimmed-underline = ${colors.background}
 
 ;On editing mode (resize for ex)
 label-mode = %mode%
-label-mode-background = ${colors.dark-purple}
-label-mode-underline = ${colors.fav-purple}
+label-mode-background = ${colors.dark-gray}
+label-mode-underline = ${colors.primary}
 label-mode-padding = 2
 label-mode-font = 3
 
 label-focused = %index%
-label-focused-background = ${colors.dark-green}
-label-focused-underline = ${colors.light-green}
+label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.primary}
+label-focused-underline = ${colors.secondary}
 label-focused-padding = 3
 label-focused-font = 3
 
 label-unfocused = %index%
-label-unfocused-foreground = ${colors.gray}
+label-unfocused-foreground = ${colors.primary}
+label-unfocused-background = ${colors.secondary}
 label-unfocused-padding = 3
 label-unfocused-font = 3
 
 label-visible = %index%
-label-visible-background = ${colors.dark-purple}
-label-visible-underline = ${colors.light-purple}
+;label-visible-background = ${colors.dark-purple}
+label-visible-underline = ${colors.light}
 label-visible-padding = 3
 label-visible-font = 3
 
@@ -152,8 +163,8 @@ interval = 0.5
 label-font = 3
 click-middle = playerctl play-pause
 
-format-underline = ${colors.menucol-blue}
-format-foreground = ${colors.menucol-blue}
+;format-underline = ${colors.menucol-blue}
+;format-foreground = ${colors.menucol-blue}
 
 
 [module/settings]
@@ -184,18 +195,18 @@ type = internal/network
 interface = wlo1
 
 label-connected-font = 3
-label-connected = %essid% %local_ip%
+label-connected = %local_ip%
 
 format-connected =  <ramp-signal> <label-connected>
 format-connected-padding = 2
-format-connected-foreground = ${colors.menucol-green}
-format-connected-underline = ${colors.menucol-green}
+;format-connected-foreground = ${colors.light}
+;format-connected-underline = ${colors.light}
 
 format-disconnected = " "
 format-disconnected-font = 7
 format-disconnected-padding = 2
-format-disconnected-foreground = ${colors.menucol-yellow}
-format-disconnected-underline = ${colors.menucol-yellow}
+;format-disconnected-foreground = ${colors.light}
+;format-disconnected-underline = ${colors.light}
 
 ramp-signal-0 = 😱
 ramp-signal-1 = 😠
@@ -213,7 +224,7 @@ type = internal/alsa
 
 format-volume = <ramp-volume> <label-volume>
 format-volume-padding = 2
-format-volume-underline = ${colors.menucol-sealine}
+;format-volume-underline = ${colors.light}
 
 label-volume = %percentage%
 label-volume-font = 3
@@ -222,13 +233,13 @@ label-muted =  (%percentage%)
 label-muted-font = 3
 label-muted-padding = 2
 label-muted-foreground = ${colors.gray}
-label-muted-underline = ${colors.gray}
+;label-muted-underline = ${colors.light}
 
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-font = 7
-ramp-volume-foreground = ${colors.menucol-sealine}
+;ramp-volume-foreground = ${colors.light}
 
 
 ;Brightness
@@ -237,9 +248,9 @@ type = custom/script
 format = <label>
 format-padding = 2
 format-prefix = 
-format-underline = ${colors.menucol-yellow}
-format-prefix-foreground = ${colors.menucol-yellow}
-interval = 2
+;format-underline = ${colors.light}
+;format-prefix-foreground = ${colors.light}
+interval = 5
 ;label = " %percentage%"
 label-font = 3
 exec = echo " $(( $(brightnessctl g) * 100 / $(brightnessctl m) ))"
@@ -252,20 +263,20 @@ blacklist-1 = caps lock
 blacklist-2 = scroll lock
 
 format-prefix = " "
-format-underline = ${colors.menucol-blue}
-format-foreground = ${colors.menucol-blue}
+;format-underline = ${colors.light}
+;format-foreground = ${colors.light}
 format-padding = 2
 
 label-layout = %layout%
 label-layout-font = 2
-label-layout-foreground = ${colors.light}
+;label-layout-foreground = ${colors.light}
 
 ;Keyboard lock states by xkeyboard
 [module/xkbstates]
 type = internal/xkeyboard
 format = <label-indicator>
 
-format-underline = ${colors.menucol-green}
+;format-underline = ${colors.light}
 format-padding = 2
 
 label-indicator-on-capslock = "%{F#77BD8B} "
@@ -280,13 +291,13 @@ label-indicator-off-scrolllock = "%{F#333}"
 [module/kbstates]
 type = custom/script
 format = <label>
-format-underline = ${colors.menucol-green}
+;format-underline = ${colors.light}
 format-padding = 2
 
 exec = $HOME/.config/polybar/kblocks.py
-interval = 0.5
+interval = 2
 label-font = 7
-label-foreground = ${colors.menucol-green}
+;label-foreground = ${colors.light}
 
 
 ;Custom Exit Button
@@ -296,10 +307,10 @@ type = custom/text
 content = ⏻
 content-font = 7
 content-padding = 2
-content-foreground = ${colors.menucol-lightblue}
-content-underline = ${colors.menucol-lightblue}
+;content-foreground = ${colors.light}
+;content-underline = ${colors.light}
 
-click-left = sh ~/.config/i3/powermenu.sh
+click-left = ~/.config/rofi/bin/menu_powermenu
 
 
 ;Battery Indicator
@@ -311,15 +322,15 @@ full-at = 100
 
 format-full = <label-full>
 format-full-padding = 2
-format-full-underline = ${colors.menucol-orange}
+format-full-underline = ${colors.light}
 
 format-charging = <animation-charging> <label-charging>
 format-charging-padding = 2
-format-charging-underline = ${colors.menucol-orange}
+;format-charging-underline = ${colors.light}
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-padding = 2
-format-discharging-underline = ${colors.menucol-orange}
+;format-discharging-underline = ${colors.light}
 
 label-full =  %percentage%%  
 label-full-font = 3
@@ -336,7 +347,7 @@ animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-framerate = 750
-animation-charging-foreground = ${colors.menucol-orange}
+;animation-charging-foreground = ${colors.light}
 
 animation-discharging-0 = 
 animation-discharging-1 = 
@@ -349,18 +360,18 @@ animation-discharging-7 = 
 animation-discharging-8 = 
 animation-discharging-9 = 
 animation-discharging-framerate = 750
-animation-discharging-foreground = ${colors.menucol-orange}
+;animation-discharging-foreground = ${colors.light}
 
 
 [module/cpu]
 type = internal/cpu
-interval = 0.5
+interval = 2
 format = <label>
 format-padding = 2
-format-underline = ${colors.menucol-red}
+;format-underline = ${colors.light}
 
 format-prefix = 
-format-prefix-foreground = ${colors.menucol-red}
+;format-prefix-foreground = ${colors.light}
 
 label = "  %percentage%"
 label-font = 3
@@ -371,10 +382,10 @@ type = internal/memory
 interval = 3
 format = <label>
 format-padding = 2
-format-underline = ${colors.menucol-purple}
+;format-underline = ${colors.light}
 
 format-prefix = 
-format-prefix-foreground = ${colors.menucol-purple}
+;format-prefix-foreground = ${colors.light}
 
 label = " %gb_used%"
 label-font = 3
@@ -385,10 +396,10 @@ type = internal/memory
 interval = 3
 format = <label>
 format-padding = 2
-format-underline = ${colors.menucol-pink}
+;format-underline = ${colors.light}
 
 format-prefix = 
-format-prefix-foreground = ${colors.menucol-pink}
+;format-prefix-foreground = ${colors.light}
 
 label = " %gb_swap_used%"
 label-font = 3
@@ -396,10 +407,10 @@ label-font = 3
 
 [module/temperature]
 type = internal/temperature
-interval = 0.5
+interval = 5
 format = <ramp> <label>
 format-padding = 2
-format-underline = ${colors.menucol-deepblue}
+;format-underline = ${colors.light}
 
 format-warn = <ramp> <label-warn>
 label = %temperature-c%
@@ -414,7 +425,7 @@ ramp-2 = 
 ramp-3 = 
 ramp-4 = 
 ramp-font = 7
-ramp-foreground = ${colors.menucol-deepblue}
+;ramp-foreground = ${colors.light}
 
 [module/filesystem]
 type = internal/fs
@@ -423,7 +434,7 @@ type = internal/fs
 mount-0 = /
 ;mount-1 = /home
 ;mount-2 = /var
-
+ 
 ; Seconds to sleep between updates
 ; Default: 30
 interval = 10
@@ -437,11 +448,18 @@ fixed-values = true
 spacing = 4
 
 format-mounted-padding = 2
-format-mounted-underline = ${colors.menucol-pink}
+;format-mounted-underline = ${colors.light}
 
 format-mounted-prefix =  
-format-mounted-prefix-foreground = ${colors.menucol-pink}
+;format-mounted-prefix-foreground = ${colors.light}
 
 format-mounted = <label-mounted>
 label-mounted =  "  %mountpoint%: %free% libre"
 label-mounted-font = 3
+
+
+[module/popup-calendar]
+type = custom/script
+exec = ~/scripts/popup-calendar.sh
+interval = 5
+click-left = ~/scripts/popup-calendar.sh --popup &

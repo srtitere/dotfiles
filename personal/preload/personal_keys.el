@@ -1,0 +1,1 @@
+(global-set-key (kbd "C-S-<Backspace>") 'kill-whole-line)
