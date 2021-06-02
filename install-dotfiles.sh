@@ -66,3 +66,11 @@ then
 else
     cp -r .profile $HOME/.profile
 fi
+
+if [[ -d $HOME/scripts ]]
+then
+    cp -rf $HOME/scripts $HOME/scripts$(date +"%Y-%m-%d-%H-%M%S").bak
+    cp -r ./scripts $HOME/
+else
+    cp -r ./scripts $HOME/
+fi
