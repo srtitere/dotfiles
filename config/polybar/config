@@ -310,8 +310,8 @@ content-padding = 2
 ;content-foreground = ${colors.light}
 ;content-underline = ${colors.light}
 
-click-left = ~/.config/rofi/bin/menu_powermenu
-
+;click-left = ~/.config/rofi/bin/menu_powermenu
+click-left = ~/scripts/power-menu.sh
 
 ;Battery Indicator
 [module/battery]

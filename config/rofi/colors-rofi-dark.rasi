@@ -1,6 +1,6 @@
 * {
     active-background: #b8bb26;
-    active-foreground: @foreground;
+    active-foreground: #ffffff;
     normal-background: @background;
     normal-foreground: @foreground;
     urgent-background: #fb4934;
@@ -16,7 +16,7 @@
     selected-active-background: #fb4934;
     selected-active-foreground: @foreground;
     selected-normal-background: #b8bb26;
-    selected-normal-foreground: @foreground;
+    selected-normal-foreground: #fb4934;
     selected-urgent-background: #fabd2f;
     selected-urgent-foreground: @foreground;
 
