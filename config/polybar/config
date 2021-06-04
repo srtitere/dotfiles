@@ -23,15 +23,16 @@ light-red = #D95B5B
 light-green = #249824
 light-purple = #A44BA0
 
-menucol-yellow = #F7F272
-menucol-blue = #1771F1
-menucol-orange = #FFAF60
-menucol-red = #F85C50
-menucol-green = #77BD8B
-menucol-sealine = #00CF91
-menucol-purple = #9A76B3
-menucol-pink = #FF77BF
-menucol-deepblue = #6560FF
+color0 = ${xrdb:color0:#151515}
+color1 = ${xrdb:color1:#AC4142}
+color2 = ${xrdb:color2:#90A959}
+color3 = ${xrdb:color3:#F4BF75}
+color4 = ${xrdb:color3:#6A9FB5}
+color5 = ${xrdb:color5:#AA759F}
+color6 = ${xrdb:color6:#75B5AA}
+color7 = ${xrdb:color7:#D0D0D0}
+color8 = ${xrdb:color8:#AC4142}
+color9 = ${xrdb:color9:#AC4142}
 menucol-lightblue = #60FFF7
 
 fav-purple = #6633FF
@@ -42,11 +43,11 @@ dark-purple = #201134
 light = #eee
 gray = #999
 dark-blue = #00007f
-dark-gray = #303030                
+dark-gray = #303030
 trasparent = #0000
 
-background = ${xrdb:color0:#222}
-foreground = ${xrdb:color7:#fff}
+background = ${xrdb:background:#222}
+foreground = ${xrdb:foreground:#fff}
 foreground-alt = ${xrdb:color7:#ff2}
 primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color2:#fff}
@@ -82,9 +83,43 @@ font-6 = ${fonts.nerd}
 wm-restack = i3
 tray-position = right
 
-modules-left = workspaces 
+modules-left = workspaces-i3
 modules-center = popup-calendar
 modules-right = layout temperature cpu battery brightness sound wifi powermenu
+
+[bar/main-b]
+monitor = ${env:MONITOR}
+enable-ipc = true
+override-redirect = false
+
+bottom = false
+width = 100%
+height = 30 ;px
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-color = ${colors.light-purple}
+line-size = 1
+
+;separator =
+
+;List of fonts
+font-0 = ${fonts.nerd}
+font-1 = ${fonts.nerd}
+font-2 = ${fonts.nerd}
+font-3 = ${fonts.nerd}
+font-4 = ${fonts.nerd}
+font-5 = ${fonts.nerd}
+font-6 = ${fonts.nerd}
+
+wm-restack = bspwm 
+tray-position = right
+
+modules-left = workspaces-bspwm
+modules-center = popup-calendar
+modules-right = layout temperature cpu battery brightness sound wifi powermenu
+
 
 
 ;Date correction
@@ -108,7 +143,7 @@ label-font = 2
 
 
 ;Workspaces
-[module/workspaces]
+[module/workspaces-i3]
 type = internal/i3
 
 pin-workspaces = true
@@ -150,6 +185,38 @@ label-urgent-background = ${colors.dark-red}
 label-urgent-underline = ${colors.light-red}
 label-urgent-padding = 3
 label-urgent-font = 3
+
+[module/workspaces-bspwm]
+type = internal/bspwm
+
+pin-workspaces = true
+enable-click = true
+enable-scroll = true
+reverse-scroll = true
+
+label-focused-foreground = ${colors.color2}
+label-focused-background = ${colors.color8}
+label-visible-background = ${colors.color5}
+label-occupied-foreground = ${colors.color5}
+label-urgent-foreground = ${colors.color5}
+label-urgent-background = ${colors.color1}
+label-empty-foreground = ${colors.color7}
+
+;label-focused = d
+;label-occupied = c
+;label-urgent = b
+;label-empty = a
+
+label-focused-font = 4
+label-occupied-font = 4
+label-urgent-font = 4
+label-empty-font = 4
+
+label-focused-padding = 1
+label-occupied-padding = 1
+label-urgent-padding = 1
+label-empty-padding = 1
+
 
 
 ;Media Player

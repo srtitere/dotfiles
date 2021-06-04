@@ -307,10 +307,21 @@ set_from_resource $bg i3wm.color2 $background
 
 set_from_resource $pr i3wm.color1 $foreground
 set_from_resource $se i3wm.color2 $foreground
+set_from_resource $c00 i3wm.color0 $foreground
+set_from_resource $c01 i3wm.color1 $foreground
+set_from_resource $c02 i3wm.color2 $foreground
+set_from_resource $c03 i3wm.color3 $foreground
+set_from_resource $c04 i3wm.color4 $foreground
+set_from_resource $c05 i3wm.color5 $foreground
+set_from_resource $c06 i3wm.color6 $foreground
+set_from_resource $c07 i3wm.color7 $foreground
+set_from_resource $c08 i3wm.color8 $foreground
+set_from_resource $c09 i3wm.color9 $foreground
+
 set_from_resource $alt i3wm.color3 $foreground
 
 # class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fr  $pr     $bg
+client.focused          $bg     $bg     $c08  $pr     $bg
 #client.focused_inactive $bg     $bg     $fg  $bg       $se
 #client.unfocused        $bg     $bg     $fg  $bg       $pr
 #client.urgent           $bg     $bg     $fg  $bg       $alt

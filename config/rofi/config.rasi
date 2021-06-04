@@ -1,7 +1,7 @@
 /** Basic config file **/
 
 configuration {
-	width: 1000;
+	width: 500;
 	show-icons: true;
 	lines: 15;
 	columns: 1;
@@ -13,5 +13,5 @@ configuration {
 	line-margin: 18;
 	separator-style: "solid";
 	hide-scrollbar: true;
-	theme: "./colors-rofi-dark.rasi";
+	theme: "./themes/gruvbox-dark.rasi";
 }

@@ -11,8 +11,13 @@
 
 # Parameters
 #===============================================================================
-bar_name="main"
-
+if [[ $DESKTOP_SESSION == "i3" ]]
+then
+   bar_name="main"
+else
+   bar_name="main-b"
+fi
+echo $bar_name
 # Terminate already running bar instances
 killall -q polybar
 
