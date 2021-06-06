@@ -6,14 +6,12 @@ ranger
 brightnessctl
 fzf
 tldr
-scrot
 papirus-icon-theme
 pavucontrol
 make
 python3
 python3-pip
 kitty
-lxterminal
 compton
 feh
 arandr
@@ -21,8 +19,4 @@ psmisc
 nano
 #network-manager-gnome
 network-manager-applet
-thunar
-blueman
-autojump
-rust-exa
-rust-bat
+zeal
