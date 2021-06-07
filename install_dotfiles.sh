@@ -24,6 +24,29 @@ else
 	cp -r ./config/i3 $HOME/.config/
 fi
 
+if [[ -d $HOME/.config/bspwm ]]
+then
+
+	cp -rf $HOME/.config/bspwm $HOME/.config/bspwm.bak
+	cp -r ./config/bspwm $HOME/.config/
+
+else
+
+	cp -r ./config/bspwm $HOME/.config/
+fi
+
+if [[ -d $HOME/.config/sxhkd ]]
+then
+
+	cp -rf $HOME/.config/sxhkd $HOME/.config/sxhkd.bak
+	cp -r ./config/sxhkd $HOME/.config/
+
+else
+
+	cp -r ./config/sxhkd $HOME/.config/
+fi
+
+
 if [[ -d $HOME/.config/rofi ]]
 then
 	cp -rf $HOME/.config/rofi $HOME/.config/rofi.bak
