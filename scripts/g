@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+firefox "www.google.es/search?channel=fs&q=$1"

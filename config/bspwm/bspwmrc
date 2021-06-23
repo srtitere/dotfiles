@@ -46,3 +46,5 @@ bspc rule -a Rofi focus=on
 #bspc rule -a Ardour desktop='^5'
 #bspc rule -a Evince desktop='^4'
 #bspc rule -a TelegramDesktop desktop='^7'
+#bspc rule -a Firefox state=floating
+#bspc rule -a hola state=floating
