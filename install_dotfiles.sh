@@ -98,4 +98,13 @@ else
     cp -r ./scripts $HOME/
 fi
 
+if [[ -d $HOME/.cache/wal ]]
+then
+    cp -rf $HOME/.cache/wal_$(date +"%Y-%m-%d-%H-%M%S").bak
+    cp -r ./cache/wal $HOME/.cache/
+else
+    mkdir -p $HOME/.cache
+    cp -r ./cache/wal $HOME/.cache/
+fi
+
 cp -rf .fonts $HOME/
