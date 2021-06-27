@@ -26,3 +26,7 @@ for m in $(polybar --list-monitors | cut -d":" -f1); do
     # -r means that changes to the config file are applied without the need of reloading the program
     MONITOR=$m polybar -r $bar_name >>/tmp/mybar.log 2>&1 & disown
 done
+sleep 1
+killall compton
+compton &
+disown
