@@ -88,6 +88,9 @@ bindsym $mod+Shift+d exec "rofi -modi window,ssh,run,drun -show run -icon-theme 
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+
+bindsym $mod+Shift+s exec "~/scripts/rofi_scripts.sh"
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
