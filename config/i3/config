@@ -502,6 +502,6 @@ exec --no-startup-id dunst
 exec --no-startup-id xfce4-power-manager
 #exec xautolock -time 15 -locker '~/.local/bin/fuzzy_lock.sh' &
 
-
+exec --no-startup-id  /lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id ~/.local/bin/autotiling &
 

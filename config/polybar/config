@@ -49,9 +49,9 @@ trasparent = #0000
 background = ${xrdb:background:#222}
 foreground = ${xrdb:foreground:#fff}
 foreground-alt = ${xrdb:color7:#ff2}
-primary = ${xrdb:color1:#222}
-secondary = ${xrdb:color2:#fff}
-alert = ${xrdb:color3:#fff}
+primary = ${xrdb:color2:#222}
+secondary = ${xrdb:color3:#fff}
+alert = ${xrdb:color1:#fff}
 
 
 [bar/main]
@@ -156,33 +156,33 @@ label-dimmed-underline = ${colors.background}
 
 ;On editing mode (resize for ex)
 label-mode = %mode%
-label-mode-background = ${colors.dark-gray}
+label-mode-background = ${colors.background}
 label-mode-underline = ${colors.primary}
 label-mode-padding = 2
 label-mode-font = 3
 
 label-focused = %index%
-label-focused-foreground = ${colors.foreground}
+label-focused-foreground = ${colors.background}
 label-focused-background = ${colors.primary}
 label-focused-underline = ${colors.secondary}
 label-focused-padding = 3
 label-focused-font = 3
 
 label-unfocused = %index%
-label-unfocused-foreground = ${colors.primary}
+label-unfocused-foreground = ${colors.background}
 label-unfocused-background = ${colors.secondary}
 label-unfocused-padding = 3
 label-unfocused-font = 3
 
 label-visible = %index%
-;label-visible-background = ${colors.dark-purple}
-label-visible-underline = ${colors.light}
+;label-visible-background = ${colors.primary}
+label-visible-underline = ${colors.secondary}
 label-visible-padding = 3
 label-visible-font = 3
 
 label-urgent = %index%
-label-urgent-background = ${colors.dark-red}
-label-urgent-underline = ${colors.light-red}
+label-urgent-background = ${colors.alert}
+label-urgent-underline = ${colors.background}
 label-urgent-padding = 3
 label-urgent-font = 3
 
