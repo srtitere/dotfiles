@@ -1,5 +1,5 @@
 
-include ~/.cache/wal/colors-kitty.conf
+include ./theme.conf
 
 
 # vim:fileencoding=utf-8:ft=conf
