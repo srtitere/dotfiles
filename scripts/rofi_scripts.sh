@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-scripts=$(ls -l $HOME/scripts/rofi_scripts/ | awk '{print $9}')
+scripts=$(ls -xl $HOME/scripts/rofi_scripts/ | awk '{print $9}'| sed '1d')
 
 selection=$(echo "$scripts" | rofi -dmenu -icon-theme Papirus)
 
