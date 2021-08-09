@@ -16,7 +16,7 @@ set $mod Mod4
 
 
 
- 
+# exec source "~/.profile"
 
 
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -36,7 +36,7 @@ new_window pixel 5
 #new_float normal
 
 
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 5
 default_border pixel 2
 default_floating_border pixel 2
 title_align center
@@ -89,7 +89,7 @@ bindsym $mod+Shift+d exec "rofi -modi window,ssh,run,drun -show run -icon-theme 
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 
-bindsym $mod+Shift+s exec "~/scripts/rofi_scripts.sh"
+bindsym $mod+Shift+s exec "bash -c ~/scripts/rofi_scripts.sh"
 
 # change focus
 bindsym $mod+j focus left
@@ -401,6 +401,7 @@ for_window [class="Kvantum Manager"] floating enable
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Yad" title="yad-calendar"] floating enable
 for_window [class="Wpg"] floating enable
+for_window [class="VirtualBox Machine"] resize set 640 480
 ##########################
 ### Start Applications ###
 ##########################
@@ -494,7 +495,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 
 #exec --no-startup-id feh --randomize --bg-fill ~/wallpapers/*
-exec --no-startup-id feh --bg-fill ~/wallpapers/0071.jpg
+exec --no-startup-id feh --bg-scale ~/wallpapers/chihiro_3840x2160.jpg
 exec --no-startup-id compton -b
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -502,6 +503,6 @@ exec --no-startup-id dunst
 exec --no-startup-id xfce4-power-manager
 #exec xautolock -time 15 -locker '~/.local/bin/fuzzy_lock.sh' &
 
-exec --no-startup-id  /lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
-exec --no-startup-id ~/.local/bin/autotiling &
 
+exec --no-startup-id ~/.local/bin/autotiling &
+exec --no-startup-id /lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 
