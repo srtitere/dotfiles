@@ -10,4 +10,4 @@ case "$r" in
     *) echo "$r no es una opcion existente (Portátil|HDMI|Doble|arandr)" ;;
 esac
 
-feh --bg-scale "$HOME/wallpapers/5k007.jpg"
+feh --bg-scale "$HOME/wallpapers/5k001.jpg"

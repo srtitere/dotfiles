@@ -18,14 +18,15 @@ logout() {
     esac
 }
 
+#with ligth-dm
 
 poweroff_command="systemctl poweroff"
 reboot_command="systemctl reboot"
-logout_command="logout"
+logout_command="dm-tool switch-to-greeter"
 #hibernate_command="systemctl hibernate"
 suspend_command="systemctl suspend"
-lock_command="$HOME/scripts/fuzzy_lock.sh"
-
+# lock_command="$HOME/scripts/fuzzy_lock.sh"
+lock_command="dm-tool lock"
 rofi_command="rofi -lines 5 -width 200"
 
 options=$'poweroff\nreboot\nlogout\nsuspend\nlock'
